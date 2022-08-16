@@ -1,0 +1,78 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "owasp1.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "owasp1.name" . }}
+    helm.sh/chart: {{ include "owasp1.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "owasp1.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - name: task-pv-storage3
+          persistentVolumeClaim:
+            claimName: task-pv-claim3
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.zapcli.image.repository }}:{{ .Values.zapcli.image.tag }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          imagePullPolicy: {{ .Values.zapcli.image.pullPolicy }}
+          command: ["zap-baseline-custom.py"]
+          args:
+            - -t
+            - https://authenticationtest.com/
+            - --auth_auto
+            - --auth_loginurl
+            - https://authenticationtest.com/simpleFormAuth/
+            - --auth_username
+            - multi@authenticationtest.com
+            - --auth_password
+            - pa$$w0rd
+            - --key_field_username
+            - name
+            - --key_field_password
+            - name
+            - --value_field_username
+            - email
+            - --value_field_password
+            - password
+            - --submit_button_input
+            - input
+            - --key_field_submit
+            - class
+            - --value_field_submit
+            - btn btn-lg btn-primary float-right
+            {{- if .Values.zapcli.steps.enabled }}
+            - --key_field_first_submit
+            - "{{ .Values.zapcli.steps.key }}"
+            - --value_field_first_submit
+            - "{{ .Values.zapcli.steps.value }}"
+            {{- end }}
+            {{- if .Values.zapcli.cookies.enabled }}
+            - --cookies_button_input
+            - "{{ .Values.zapcli.cookies.type }}"
+            - --value_field_poopup
+            - "{{ .Values.zapcli.cookies.value }}"
+            - --key_field_poopup
+            - "{{ .Values.zapcli.cookies.key }}"
+            {{- end }}
+          volumeMounts:
+              - mountPath: "/zap/wrk"
+                name: task-pv-storage3
+      restartPolicy: Never
+
+
+
+
