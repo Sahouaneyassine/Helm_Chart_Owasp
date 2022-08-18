@@ -46,6 +46,13 @@ spec:
             args:
               - -t
               - "{{ .Values.zapcli.target.home }}"
+              - -r
+              - "{{ .Values.zapcli.report.name }}"
+              - -g
+              - "{{ .Values.zapcli.configfile.name }}"
+              - -d
+              - -m
+              - "{{ .Values.zapcli.duree.value }}"
               - --auth_auto
               - --auth_loginurl
               - "{{ .Values.zapcli.target.loginpage }}"

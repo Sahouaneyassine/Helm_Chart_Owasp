@@ -63,6 +63,15 @@ zapcli:
     loginpage: https://authenticationtest.com/simpleFormAuth/
   
   
+  report:
+    name: report.html
+
+  configfile:
+    name: gen.conf
+
+  duree:
+    value: 5
+   
   # Login Credentials
   # - user : Username of the login page
   # - pass : Password of the login page
