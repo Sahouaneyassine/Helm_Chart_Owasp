@@ -22,7 +22,7 @@ spec:
       volumes:
         - name: task-pv-storage3
           persistentVolumeClaim:
-            claimName: task-pv-claim3
+            claimName: {{ .Values.pvc.name }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.zapcli.image.repository }}:{{ .Values.zapcli.image.tag }}"
