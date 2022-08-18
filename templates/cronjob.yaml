@@ -1,0 +1,91 @@
+apiVersion: batch/v1
+
+kind: CronJob
+
+metadata:
+
+  name: {{ include "owasp1.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "owasp1.name" . }}
+    helm.sh/chart: {{ include "owasp1.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+
+spec:
+
+  schedule: {{ .Values.cronjob.schedule | quote }}
+
+  jobTemplate:
+
+    spec:
+
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: {{ include "owasp1.name" . }}
+            app.kubernetes.io/instance: {{ .Release.Name }}
+
+        spec:
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+
+          volumes:
+            - name: task-pv-storage3
+              persistentVolumeClaim:
+                claimName: {{ .Values.pvc.name }}
+
+
+          containers:
+
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.zapcli.image.repository }}:{{ .Values.zapcli.image.tag }}"
+            imagePullPolicy: {{ .Values.zapcli.image.pullPolicy }}
+            command: ["zap-baseline-custom.py"]
+            args:
+              - -t
+              - "{{ .Values.zapcli.target.home }}"
+              - --auth_auto
+              - --auth_loginurl
+              - "{{ .Values.zapcli.target.loginpage }}"
+              - --auth_username
+              - "{{ .Values.zapcli.cred.user }}"
+              - --auth_password
+              - "{{ .Values.zapcli.cred.pass }}"
+              - --key_field_username
+              - "{{ .Values.zapcli.fields.key_field_username }}"
+              - --key_field_password
+              - "{{ .Values.zapcli.fields.key_field_password }}"
+              - --value_field_username
+              - "{{ .Values.zapcli.fields.value_field_username }}"
+              - --value_field_password
+              - "{{ .Values.zapcli.fields.value_field_password }}"
+              - --submit_button_input
+              - "{{ .Values.zapcli.submit.submit_button_input }}"
+              - --key_field_submit
+              - "{{ .Values.zapcli.submit.key_field_submit }}"
+              - --value_field_submit
+              - "{{ .Values.zapcli.submit.value_field_submit }}"
+              {{- if .Values.zapcli.steps.enabled }}
+              - --key_field_first_submit
+              - "{{ .Values.zapcli.steps.key }}"
+              - --value_field_first_submit
+              - "{{ .Values.zapcli.steps.value }}"
+              {{- end }}
+              {{- if .Values.zapcli.cookies.enabled }}
+              - --cookies_button_input
+              - "{{ .Values.zapcli.cookies.type }}"
+              - --value_field_poopup
+              - "{{ .Values.zapcli.cookies.value }}"
+              - --key_field_poopup
+              - "{{ .Values.zapcli.cookies.key }}"
+              {{- end }}
+
+            volumeMounts:
+                - mountPath: "/zap/wrk"
+                  name: task-pv-storage3
+
+            
+
+          restartPolicy: OnFailure
