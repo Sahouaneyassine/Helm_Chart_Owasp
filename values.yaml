@@ -28,44 +28,87 @@ serviceAccount:
 zapcli:
   image:
     repository: yasssahouane/owasp_test
-    tag: 30
+    tag: 31
     pullPolicy: IfNotPresent
+    
+    
+    
 
-  # Verbose information about a scan.
+  # information about a scan.
+  
+  # Target website
+  # - home : URL of the Home page of website
+  # - loginpage : URL of the Login page
+  
+  target:
+    home: https://authenticationtest.com/
+    loginpage: https://authenticationtest.com/simpleFormAuth/
+  
+  
+  # Login Credentials
+  # - user : Username of the login page
+  # - pass : Password of the login page
+  
+  cred:
+    user: https://authenticationtest.com/
+    pass: https://authenticationtest.com/simpleFormAuth/
+    
+  
+  # Get Fields of the Login page
+  # - key_field_username / password  : <input key=value>
+  # - value_field_username / password : <input key=value>
+  
+  fields:
+    key_field_username: name
+    key_field_password: name
+    value_field_username: email
+    value_field_password: password
+  
+  
+  
+  # Get the Button to submit the form and log in
+  # - submit_button_input : button?input , <input> or <button>
+  # - key_field_submit : <button/input  key_field_submit=value_field_submit/>
+  # - value_field_submit : <button/input  key_field_submit=value_field_submit/>
+  
+  submit:
+    submit_button_input: input
+    key_field_submit: class
+    value_field_submit: btn btn-lg btn-primary float-right
+    
+    
+    
+  
+  # If the login page have 2-step login
+  # - enabled : if the login have 2 steps
+  # - key : get the button/input of the first page by ? value,id,name...
+  # - value : <type key=value>
+  
   steps:
-    enabled: false
+    enabled: true
     key: 
-    value:
+    value: btn slfl
+    
+    
+    
+  # If the login page have a cookies pop up
+  # - enabled : if the login have a pop up
+  # - type : to pass the pop up by <type> ? button,input
+  # - key : get the button/input by ? value,id,name...
+  # - value : <type key=value>
   
   cookies:
-    enabled: false
+    enabled: true
     type:
     key: 
-    value:
+    value: btn qkd
+    
+    
 
   debug:
     enabled: false
 
-  # What type of scans should owasp zap do?
-  # - all
-  # - sqli
-  # - xss
-  # - xss_reflected
-  # - xss_persistent
-  scanTypes:
-  - xss
-  - sqli
-
-  # Activates a spider against the host to scan through for vulnerabilities across it's sitemap
-  spider:
-    enabled: true
-
-  # Should the scan be recursive
-  recursive:
-    enabled: true
-
-  # The target host for owasp-zap to scan
-  targetHost: http://nodegoat.herokuapp.com/
+  
 
 podAnnotations: {}
 

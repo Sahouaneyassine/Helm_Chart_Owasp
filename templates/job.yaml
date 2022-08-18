@@ -32,28 +32,28 @@ spec:
           command: ["zap-baseline-custom.py"]
           args:
             - -t
-            - https://authenticationtest.com/
+            - "{{ .Values.zapcli.target.home }}"
             - --auth_auto
             - --auth_loginurl
-            - https://authenticationtest.com/simpleFormAuth/
+            - "{{ .Values.zapcli.target.loginpage }}"
             - --auth_username
-            - multi@authenticationtest.com
+            - "{{ .Values.zapcli.cred.user }}"
             - --auth_password
-            - pa$$w0rd
+            - "{{ .Values.zapcli.cred.pass }}"
             - --key_field_username
-            - name
+            - "{{ .Values.zapcli.fields.key_field_username }}"
             - --key_field_password
-            - name
+            - "{{ .Values.zapcli.fields.key_field_password }}"
             - --value_field_username
-            - email
+            - "{{ .Values.zapcli.fields.value_field_username }}"
             - --value_field_password
-            - password
+            - "{{ .Values.zapcli.fields.value_field_password }}"
             - --submit_button_input
-            - input
+            - "{{ .Values.zapcli.submit.submit_button_input }}"
             - --key_field_submit
-            - class
+            - "{{ .Values.zapcli.submit.key_field_submit }}"
             - --value_field_submit
-            - btn btn-lg btn-primary float-right
+            - "{{ .Values.zapcli.submit.value_field_submit }}"
             {{- if .Values.zapcli.steps.enabled }}
             - --key_field_first_submit
             - "{{ .Values.zapcli.steps.key }}"
