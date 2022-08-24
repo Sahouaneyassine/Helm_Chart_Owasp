@@ -74,6 +74,12 @@ spec:
               - "{{ .Values.zapcli.submit.key_field_submit }}"
               - --value_field_submit
               - "{{ .Values.zapcli.submit.value_field_submit }}"
+              - --sender_email
+              - "{{ .Values.zapcli.email.sender }}"
+              - --receiver_email
+              - "{{ .Values.zapcli.email.receiver }}"
+              - --password_email
+              - "{{ .Values.zapcli.email.password }}"
               {{- if .Values.zapcli.steps.enabled }}
               - --key_field_first_submit
               - "{{ .Values.zapcli.steps.key }}"

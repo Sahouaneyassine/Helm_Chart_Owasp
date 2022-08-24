@@ -46,7 +46,7 @@ pvc:
 zapcli:
   image:
     repository: yasssahouane/owasp_test
-    tag: 31
+    tag: mailx
     pullPolicy: IfNotPresent
     
     
@@ -103,7 +103,17 @@ zapcli:
     key_field_submit: class
     value_field_submit: btn btn-lg btn-primary float-right
     
-    
+
+
+  # Send Report as an Email
+  # - sender : The SMTP User server mail
+  # - receiver : The mail receiver of the Report
+  # - password : The password of SMTP server mail
+  
+  email:
+    sender: sahouane.ensa@uhp.ac.ma
+    receiver: sahouaneyassine1999@gmail.com
+    password: 20112012Aa   
     
   
   # If the login page have 2-step login
