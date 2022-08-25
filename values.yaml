@@ -46,7 +46,7 @@ pvc:
 zapcli:
   image:
     repository: yasssahouane/owasp_test
-    tag: mailx
+    tag: mailcoxxxx
     pullPolicy: IfNotPresent
     
     
@@ -70,15 +70,15 @@ zapcli:
     name: gen.conf
 
   duree:
-    value: 5
+    value: "5"
    
   # Login Credentials
   # - user : Username of the login page
   # - pass : Password of the login page
   
   cred:
-    user: https://authenticationtest.com/
-    pass: https://authenticationtest.com/simpleFormAuth/
+    username: ysahouane
+    password: "20112012"
     
   
   # Get Fields of the Login page
@@ -113,7 +113,7 @@ zapcli:
   email:
     sender: sahouane.ensa@uhp.ac.ma
     receiver: sahouaneyassine1999@gmail.com
-    password: 20112012Aa   
+    password: "20112012Aa"   
     
   
   # If the login page have 2-step login

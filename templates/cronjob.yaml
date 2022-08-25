@@ -41,64 +41,148 @@ spec:
 
           - name: {{ .Chart.Name }}
             image: "{{ .Values.zapcli.image.repository }}:{{ .Values.zapcli.image.tag }}"
+            env:
+              - name: auth_username
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: auth_username
+                    optional: false
+              - name: auth_password
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: auth_password
+                    optional: false
+              - name: target
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: target
+                    optional: false
+              - name: reportx
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: reportx
+                    optional: false
+              - name: configfile
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: configfile
+                    optional: false
+              - name: duree
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: duree
+                    optional: false
+              - name: auth_loginurl
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: auth_loginurl
+                    optional: false
+              - name: key_field_username
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: key_field_username
+                    optional: false
+              - name: key_field_password
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: key_field_password
+                    optional: false
+              - name: value_field_username
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: value_field_username
+                    optional: false
+              - name: value_field_password
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: value_field_password
+                    optional: false
+              - name: submit_button_input
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: submit_button_input
+                    optional: false
+              - name: key_field_submit
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: key_field_submit
+                    optional: false
+              - name: value_field_submit
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: value_field_submit
+                    optional: false
+              - name: sender_email
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: sender_email
+                    optional: false
+              - name: receiver_email
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: receiver_email
+                    optional: false
+              - name: password_email
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: password_email
+                    optional: false
+              - name: key_field_first_submit
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: key_field_first_submit
+                    optional: yes
+              - name: value_field_first_submit
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: value_field_first_submit
+                    optional: yes
+              - name: cookies_button_input
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: cookies_button_input
+                    optional: yes
+              - name: value_field_poopup
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: value_field_poopup
+                    optional: yes
+              - name: key_field_poopup
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: key_field_poopup
+                    optional: yes
+
             imagePullPolicy: {{ .Values.zapcli.image.pullPolicy }}
-            command: ["zap-baseline-custom.py"]
-            args:
-              - -t
-              - "{{ .Values.zapcli.target.home }}"
-              - -r
-              - "{{ .Values.zapcli.report.name }}"
-              - -g
-              - "{{ .Values.zapcli.configfile.name }}"
-              - -d
-              - -m
-              - "{{ .Values.zapcli.duree.value }}"
-              - --auth_auto
-              - --auth_loginurl
-              - "{{ .Values.zapcli.target.loginpage }}"
-              - --auth_username
-              - "{{ .Values.zapcli.cred.user }}"
-              - --auth_password
-              - "{{ .Values.zapcli.cred.pass }}"
-              - --key_field_username
-              - "{{ .Values.zapcli.fields.key_field_username }}"
-              - --key_field_password
-              - "{{ .Values.zapcli.fields.key_field_password }}"
-              - --value_field_username
-              - "{{ .Values.zapcli.fields.value_field_username }}"
-              - --value_field_password
-              - "{{ .Values.zapcli.fields.value_field_password }}"
-              - --submit_button_input
-              - "{{ .Values.zapcli.submit.submit_button_input }}"
-              - --key_field_submit
-              - "{{ .Values.zapcli.submit.key_field_submit }}"
-              - --value_field_submit
-              - "{{ .Values.zapcli.submit.value_field_submit }}"
-              - --sender_email
-              - "{{ .Values.zapcli.email.sender }}"
-              - --receiver_email
-              - "{{ .Values.zapcli.email.receiver }}"
-              - --password_email
-              - "{{ .Values.zapcli.email.password }}"
-              {{- if .Values.zapcli.steps.enabled }}
-              - --key_field_first_submit
-              - "{{ .Values.zapcli.steps.key }}"
-              - --value_field_first_submit
-              - "{{ .Values.zapcli.steps.value }}"
-              {{- end }}
-              {{- if .Values.zapcli.cookies.enabled }}
-              - --cookies_button_input
-              - "{{ .Values.zapcli.cookies.type }}"
-              - --value_field_poopup
-              - "{{ .Values.zapcli.cookies.value }}"
-              - --key_field_poopup
-              - "{{ .Values.zapcli.cookies.key }}"
-              {{- end }}
+            command: ["run1.sh"]
 
             volumeMounts:
                 - mountPath: "/zap/wrk"
                   name: task-pv-storage3
 
+            
             
 
           restartPolicy: OnFailure
