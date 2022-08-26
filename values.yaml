@@ -46,7 +46,7 @@ pvc:
 zapcli:
   image:
     repository: yasssahouane/owasp_test
-    tag: mailcoxxxx
+    tag: finalmail0
     pullPolicy: IfNotPresent
     
     
