@@ -13,8 +13,8 @@ A Helm chart for Kubernetes
 | zapcli.cookies | object | `{"enabled":true,"key":null,"type":null,"value":"btn qkd"}` | To pass the cookies poop up if there is in our Login Page |
 | zapcli.cookies.enabled | bool | `true` | enabled : if the login page have a pop up |
 | zapcli.cookies.key | string | `nil` | key : get the button/input by ? <type value,id,name..=value/> |
-| zapcli.cookies.type | string | `nil` | type : to pass the pop up by <type key=value/> ? button,input |
-| zapcli.cookies.value | string | `"btn qkd"` | value : <type key=value/> |
+| zapcli.cookies.type | string | `nil` | type : to pass the pop up by <button,input... key=value/> |
+| zapcli.cookies.value | string | `"btn qkd"` | value : <type key=value../> |
 | zapcli.cred | object | `{"password":"20112012","username":"ysahouane"}` | Login Credentials |
 | zapcli.cred.password | string | `"20112012"` | pass : Password of the login page |
 | zapcli.cred.username | string | `"ysahouane"` | user : Username of the login page |
