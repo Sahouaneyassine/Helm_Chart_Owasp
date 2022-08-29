@@ -146,7 +146,7 @@ zapcli:
     type:
     # -- key : get the button/input by ? <type value,id,name..=value/>
     key: 
-    # -- value : value of the key ? <type key..=value/>
+    # -- value : value of the key ? <type key,dsds,dsd...=value/>
     value: btn qkd
     
     
