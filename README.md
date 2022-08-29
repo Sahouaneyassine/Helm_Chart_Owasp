@@ -9,10 +9,6 @@ A Helm chart for Kubernetes
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | cronjob | object | `{"schedule":"* * * * *"}` | To schedule ou scan to run in a spesific time . |
 | cronjob.schedule | string | `"* * * * *"` | The Cron value . |
 | fullnameOverride | string | `"owasp-chart"` |  |
