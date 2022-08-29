@@ -140,7 +140,7 @@ zapcli:
  
   # -- If the login page have a cookies pop up
   cookies:
-  # -- enabled : if the login have a pop up
+    # -- enabled : if the login have a pop up
     enabled: true
     # -- type : to pass the pop up by <type> ? button,input
     type:
