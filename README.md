@@ -25,10 +25,10 @@ A Helm chart for Kubernetes
 | zapcli.email.receiver | string | `"sahouaneyassine1999@gmail.com"` | receiver : The mail receiver of the Report |
 | zapcli.email.sender | string | `"sahouane.ensa@uhp.ac.ma"` | sender : The SMTP User server mail |
 | zapcli.fields | object | `{"key_field_password":"name","key_field_username":"name","value_field_password":"password","value_field_username":"email"}` | Get Fields of the Login page |
-| zapcli.fields.key_field_password | string | `"name"` | key_field_password  : <input key=value> |
-| zapcli.fields.key_field_username | string | `"name"` | key_field_username  : <input key=value> |
-| zapcli.fields.value_field_password | string | `"password"` | value_field_password  : <input key=value> |
-| zapcli.fields.value_field_username | string | `"email"` | value_field_username  : <input key=value> |
+| zapcli.fields.key_field_password | string | `"name"` | key_field_password <input key=value> |
+| zapcli.fields.key_field_username | string | `"name"` | key_field_username <input key=value> |
+| zapcli.fields.value_field_password | string | `"password"` | value_field_password <input key=value> |
+| zapcli.fields.value_field_username | string | `"email"` | value_field_username <input key=value> |
 | zapcli.image | object | `{"pullPolicy":"IfNotPresent","repository":"yasssahouane/owasp_test","tag":"finalmail0"}` | Image to use for OWASP ZAP Scan container |
 | zapcli.image.pullPolicy | string | `"IfNotPresent"` | pullPolicy |
 | zapcli.image.repository | string | `"yasssahouane/owasp_test"` | Repository  |
