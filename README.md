@@ -14,7 +14,7 @@ A Helm chart for Kubernetes
 | zapcli.cookies.enabled | bool | `true` | enabled : if the login page have a pop up |
 | zapcli.cookies.key | string | `nil` | key : get the button/input by ? <type value,id,name..=value/> |
 | zapcli.cookies.type | string | `nil` | type : to pass the pop up by <button,input... key=value/> |
-| zapcli.cookies.value | string | `"btn qkd"` | value : value of the key ? <type key,dsds,dsd...=value/> |
+| zapcli.cookies.value | string | `"btn qkd"` | value : value of the key ? < type key = value / > |
 | zapcli.cred | object | `{"password":"20112012","username":"ysahouane"}` | Login Credentials |
 | zapcli.cred.password | string | `"20112012"` | pass : Password of the login page |
 | zapcli.cred.username | string | `"ysahouane"` | user : Username of the login page |
@@ -38,9 +38,9 @@ A Helm chart for Kubernetes
 | zapcli.steps.key | string | `nil` | key : get the button/input of the first page by ? <key: value,id,name..=value/> . |
 | zapcli.steps.value | string | `"btn slfl"` | value : <type key=value>. |
 | zapcli.submit | object | `{"key_field_submit":"class","submit_button_input":"input","value_field_submit":"btn btn-lg btn-primary float-right"}` | Get the Button to submit the form and log in |
-| zapcli.submit.key_field_submit | string | `"class"` | key_field_submit : <button/input  key_field_submit=value_field_submit/> |
+| zapcli.submit.key_field_submit | string | `"class"` | key_field_submit : <button,input  key_field_submit=value_field_submit/> |
 | zapcli.submit.submit_button_input | string | `"input"` | submit_button_input : <button?input key_field_submit=value_field_submit/> |
-| zapcli.submit.value_field_submit | string | `"btn btn-lg btn-primary float-right"` | value_field_submit : <button/input  key_field_submit=value_field_submit/> |
+| zapcli.submit.value_field_submit | string | `"btn btn-lg btn-primary float-right"` | value_field_submit : <button,input  key_field_submit=value_field_submit/> |
 | zapcli.target | object | `{"home":"https://authenticationtest.com/","loginpage":"https://authenticationtest.com/simpleFormAuth/"}` | information about The Target. |
 | zapcli.target.home | string | `"https://authenticationtest.com/"` | home : URL of the Home page of website |
 | zapcli.target.loginpage | string | `"https://authenticationtest.com/simpleFormAuth/"` | loginpage : URL of the Login page |
