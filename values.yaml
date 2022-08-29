@@ -45,6 +45,7 @@ pvc:
   
 zapcli:
   image:
+    # -- Image to use for OWASP ZAP Scan container 
     repository: yasssahouane/owasp_test
     tag: finalmail0
     pullPolicy: IfNotPresent
@@ -53,13 +54,10 @@ zapcli:
     
 
   # information about a scan.
-  
-  # Target website
-  # - home : URL of the Home page of website
-  # - loginpage : URL of the Login page
-  
   target:
+    # - home : URL of the Home page of website
     home: https://authenticationtest.com/
+    # - loginpage : URL of the Login page
     loginpage: https://authenticationtest.com/simpleFormAuth/
   
   
@@ -71,13 +69,13 @@ zapcli:
 
   duree:
     value: "5"
-   
-  # Login Credentials
-  # - user : Username of the login page
-  # - pass : Password of the login page
+     
   
+  # Login Credentials
   cred:
+    # - user : Username of the login page
     username: ysahouane
+    # - pass : Password of the login page
     password: "20112012"
     
   
@@ -106,13 +104,12 @@ zapcli:
 
 
   # Send Report as an Email
-  # - sender : The SMTP User server mail
-  # - receiver : The mail receiver of the Report
-  # - password : The password of SMTP server mail
-  
   email:
+    # - sender : The SMTP User server mail
     sender: sahouane.ensa@uhp.ac.ma
+    # - receiver : The mail receiver of the Report
     receiver: sahouaneyassine1999@gmail.com
+    # - password : The password of SMTP server mail
     password: "20112012Aa"   
     
   
