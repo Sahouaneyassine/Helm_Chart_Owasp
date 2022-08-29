@@ -90,13 +90,13 @@ zapcli:
   
   # -- Get Fields of the Login page
   fields:
-    # -- key_field_username : <input key_field_username=value_field_username/> 
+    # -- key_field_username : < input key_field_username = value_field_username / > 
     key_field_username: name
-    # -- key_field_password : <input key_field_password=value_field_password/>
+    # -- key_field_password : < input key_field_password = value_field_password / >
     key_field_password: name
-    # -- value_field_username : <input key_field_username=value_field_username/>
+    # -- value_field_username : < input key_field_username = value_field_username / >
     value_field_username: email
-    # -- value_field_password : <input key_field_password=value_field_password/>
+    # -- value_field_password : < input key_field_password = value_field_password / >
     value_field_password: password
   
   
@@ -106,11 +106,11 @@ zapcli:
  
   # -- Get the Button to submit the form and log in
   submit:
-    # -- submit_button_input : <button?input key_field_submit=value_field_submit/>
+    # -- submit_button_input : < button,input key_field_submit = value_field_submit / >
     submit_button_input: input
-    # -- key_field_submit : <button,input  key_field_submit=value_field_submit/>
+    # -- key_field_submit : < button,input  key_field_submit = value_field_submit / >
     key_field_submit: class
-    # -- value_field_submit : <button,input  key_field_submit=value_field_submit/>
+    # -- value_field_submit : < button,input  key_field_submit = value_field_submit / >
     value_field_submit: btn btn-lg btn-primary float-right
     
 
@@ -130,9 +130,9 @@ zapcli:
   steps:
     # -- enabled : true/fasle if the login have 2 steps .
     enabled: true
-    # -- key : get the button/input of the first page by ? <key: value,id,name..=value/> .
+    # -- key : get the button/input of the first page by ? < type  value,id,name.. = value / > .
     key: 
-    # -- value : <type key=value>.
+    # -- value : < type key = value / >.
     value: btn slfl
     
     
@@ -142,9 +142,9 @@ zapcli:
   cookies:
     # -- enabled : if the login page have a pop up
     enabled: true
-    # -- type : to pass the pop up by <button,input... key=value/>
+    # -- type : to pass the pop up by < button,input key = value / >
     type:
-    # -- key : get the button/input by ? <type value,id,name..=value/>
+    # -- key : get the button/input by ? < type value,id,name.. = value / >
     key: 
     # -- value : value of the key ? < type key = value / >
     value: btn qkd
