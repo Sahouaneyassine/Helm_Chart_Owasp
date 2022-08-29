@@ -8,42 +8,8 @@ A Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` |  |
 | cronjob | object | `{"schedule":"* * * * *"}` | To schedule ou scan to run in a spesific time . |
 | cronjob.schedule | string | `"* * * * *"` | The Cron value . |
-| fullnameOverride | string | `"owasp-chart"` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"nginx"` |  |
-| image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
-| imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.className | string | `""` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts | list | `[{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}]` | kubernetes.io/tls-acme: "true" |
-| ingress.tls | list | `[]` |  |
-| nameOverride | string | `"owasp-app"` |  |
-| nodeSelector | object | `{}` |  |
-| podAnnotations | object | `{}` |  |
-| podSecurityContext | object | `{}` |  |
-| pv.accessmode | string | `"ReadWriteOnce"` |  |
-| pv.name | string | `"task-pv-volume"` |  |
-| pv.path | string | `"/mnt/data"` |  |
-| pv.storage | string | `"1Gi"` |  |
-| pv.storageClassName | string | `"manual"` |  |
-| pvc.accessmode | string | `"ReadWriteOnce"` |  |
-| pvc.capacity | string | `"1Gi"` |  |
-| pvc.name | string | `"task-pv-claim"` |  |
-| pvc.storageClassName | string | `"manual"` |  |
-| replicaCount | int | `1` |  |
-| resources | object | `{}` |  |
-| securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
-| service.type | string | `"ClusterIP"` |  |
-| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
-| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
-| serviceAccount.name | string | `""` | If not set and create is true, a name is generated using the fullname template |
-| tolerations | list | `[]` |  |
-| zapcli.configfile.name | string | `"gen.conf"` |  |
 | zapcli.cookies | object | `{"enabled":true,"key":null,"type":null,"value":"btn qkd"}` | If the login page have a cookies pop up |
 | zapcli.cookies.enabled | bool | `true` | enabled : if the login have a pop up |
 | zapcli.cookies.key | string | `nil` | key : get the button/input by ? value,id,name... |
@@ -52,7 +18,6 @@ A Helm chart for Kubernetes
 | zapcli.cred | object | `{"password":"20112012","username":"ysahouane"}` | Login Credentials |
 | zapcli.cred.password | string | `"20112012"` | pass : Password of the login page |
 | zapcli.cred.username | string | `"ysahouane"` | user : Username of the login page |
-| zapcli.debug.enabled | bool | `false` |  |
 | zapcli.duree | object | `{"value":"5"}` | Set A Max time for our scan  |
 | zapcli.duree.value | string | `"5"` | Value of the Max time for our scan |
 | zapcli.email | object | `{"password":"20112012Aa","receiver":"sahouaneyassine1999@gmail.com","sender":"sahouane.ensa@uhp.ac.ma"}` | Send Report as an Email |
@@ -68,7 +33,6 @@ A Helm chart for Kubernetes
 | zapcli.image.pullPolicy | string | `"IfNotPresent"` | pullPolicy |
 | zapcli.image.repository | string | `"yasssahouane/owasp_test"` | Repository  |
 | zapcli.image.tag | string | `"finalmail0"` | Tag |
-| zapcli.report.name | string | `"report.html"` |  |
 | zapcli.steps | object | `{"enabled":true,"key":null,"value":"btn slfl"}` | If the login page have 2-step login |
 | zapcli.steps.enabled | bool | `true` | enabled : if the login have 2 steps |
 | zapcli.steps.key | string | `nil` | key : get the button/input of the first page by ? value,id,name... |

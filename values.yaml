@@ -1,19 +1,21 @@
 # -- Default values for owasp1.
 # -- This is a YAML-formatted file.
 # -- Declare variables to be passed into your templates.
-
+# @ignored
 replicaCount: 1
-
+# @ignored
 image:
   repository: nginx
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
   tag: ""
-
+# @ignored
 imagePullSecrets: []
+# @ignored
 nameOverride: "owasp-app"
+# @ignored
 fullnameOverride: "owasp-chart"
-
+# @ignored
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true
@@ -26,7 +28,7 @@ serviceAccount:
 cronjob:
   # -- The Cron value .
   schedule: "* * * * *"
-
+# @ignored
 pv:
   name: task-pv-volume
   storageClassName: manual
@@ -35,7 +37,7 @@ pv:
   path: /mnt/data
 
 
-
+# @ignored
 pvc:
   name: task-pv-claim
   storageClassName: manual
@@ -64,10 +66,10 @@ zapcli:
     # -- loginpage : URL of the Login page
     loginpage: https://authenticationtest.com/simpleFormAuth/
   
-  
+  # @ignored
   report:
     name: report.html
-
+  # @ignored
   configfile:
     name: gen.conf
 
@@ -148,17 +150,17 @@ zapcli:
     value: btn qkd
     
     
-
+  # @ignored
   debug:
     enabled: false
 
   
-
+# @ignored
 podAnnotations: {}
-
+# @ignored
 podSecurityContext: {}
   # -- fsGroup: 2000
-
+# @ignored
 securityContext: {}
   # -- capabilities:
   # --   drop:
@@ -166,11 +168,11 @@ securityContext: {}
   # -- readOnlyRootFilesystem: true
   # -- runAsNonRoot: true
   # -- runAsUser: 1000
-
+# @ignored
 service:
   type: ClusterIP
   port: 80
-
+# @ignored
 ingress:
   enabled: false
   className: ""
@@ -186,7 +188,7 @@ ingress:
   # --  - secretName: chart-example-tls
   # --    hosts:
   # --      - chart-example.local
-
+# @ignored
 resources: {}
   # -- We usually recommend not to specify default resources and to leave this as a conscious
   # -- choice for the user. This also increases chances charts run on environments with little
@@ -205,9 +207,9 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # -- targetMemoryUtilizationPercentage: 80
-
+# @ignored
 nodeSelector: {}
-
+# @ignored
 tolerations: []
-
+# @ignored
 affinity: {}
