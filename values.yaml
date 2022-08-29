@@ -138,15 +138,15 @@ zapcli:
     
     
  
-  # -- If the login page have a cookies pop up
+  # -- To pass the cookies poop up if there is in our Login Page
   cookies:
-    # -- enabled : if the login have a pop up
+    # -- enabled : if the login page have a pop up
     enabled: true
-    # -- type : to pass the pop up by <type> ? button,input
+    # -- type : to pass the pop up by <type key=value/> ? button,input
     type:
-    # -- key : get the button/input by ? value,id,name...
+    # -- key : get the button/input by ? <type value,id,name..=value/>
     key: 
-    # -- value : <type key=value>
+    # -- value : <type key=value/>
     value: btn qkd
     
     
