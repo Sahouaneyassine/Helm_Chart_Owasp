@@ -34,9 +34,9 @@ A Helm chart for Kubernetes
 | zapcli.image.repository | string | `"yasssahouane/owasp_test"` | Repository  |
 | zapcli.image.tag | string | `"finalmail0"` | Tag |
 | zapcli.steps | object | `{"enabled":true,"key":null,"value":"btn slfl"}` | If the login page have 2-step login |
-| zapcli.steps.enabled | bool | `true` | enabled : if the login have 2 steps |
-| zapcli.steps.key | string | `nil` | key : get the button/input of the first page by ? value,id,name... |
-| zapcli.steps.value | string | `"btn slfl"` | value : <type key=value> |
+| zapcli.steps.enabled | bool | `true` | enabled : true/fasle if the login have 2 steps . |
+| zapcli.steps.key | string | `nil` | key : get the button/input of the first page by ? <key: value,id,name..=value/> . |
+| zapcli.steps.value | string | `"btn slfl"` | value : <type key=value>. |
 | zapcli.submit | object | `{"key_field_submit":"class","submit_button_input":"input","value_field_submit":"btn btn-lg btn-primary float-right"}` | Get the Button to submit the form and log in |
 | zapcli.submit.key_field_submit | string | `"class"` | key_field_submit : <button/input  key_field_submit=value_field_submit/> |
 | zapcli.submit.submit_button_input | string | `"input"` | submit_button_input : <button?input key_field_submit=value_field_submit/> |

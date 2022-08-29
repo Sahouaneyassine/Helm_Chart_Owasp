@@ -128,11 +128,11 @@ zapcli:
  
   # -- If the login page have 2-step login
   steps:
-    # -- enabled : if the login have 2 steps
+    # -- enabled : true/fasle if the login have 2 steps .
     enabled: true
-    # -- key : get the button/input of the first page by ? value,id,name...
+    # -- key : get the button/input of the first page by ? <key: value,id,name..=value/> .
     key: 
-    # -- value : <type key=value>
+    # -- value : <type key=value>.
     value: btn slfl
     
     
