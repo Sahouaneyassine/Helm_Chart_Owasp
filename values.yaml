@@ -59,7 +59,7 @@ zapcli:
     
     
 
-  # -- information about a scan.
+  # -- information about The Target.
   target:
     # -- home : URL of the Home page of website
     home: https://authenticationtest.com/
@@ -90,13 +90,13 @@ zapcli:
   
   # -- Get Fields of the Login page
   fields:
-    # -- key_field_username <input key=value>
+    # -- key_field_username : <input key_field_username=value_field_username/> 
     key_field_username: name
-    # -- key_field_password <input key=value>
+    # -- key_field_password : <input key_field_password=value_field_password/>
     key_field_password: name
-    # -- value_field_username <input key=value>
+    # -- value_field_username : <input key_field_username=value_field_username/>
     value_field_username: email
-    # -- value_field_password <input key=value>
+    # -- value_field_password : <input key_field_password=value_field_password/>
     value_field_password: password
   
   
@@ -106,7 +106,7 @@ zapcli:
  
   # -- Get the Button to submit the form and log in
   submit:
-    # -- submit_button_input : button?input , <input> or <button>
+    # -- submit_button_input : <button?input key_field_submit=value_field_submit/>
     submit_button_input: input
     # -- key_field_submit : <button/input  key_field_submit=value_field_submit/>
     key_field_submit: class
