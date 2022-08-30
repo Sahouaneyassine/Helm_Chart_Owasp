@@ -34,10 +34,10 @@ A Helm chart for Kubernetes
 | zapcli.duree | object | Set A Max time for our scan  | `{"value":?}` | 
 | zapcli.duree.value | string | Value of the Max time for our scan | `"5"` |
 | zapcli.fields | object | Get Fields of the Login page | `{"key_field_password":?,"key_field_username":?,"value_field_password":?,"value_field_username":?}` | 
-| zapcli.fields.key_field_password | string | key_field_password : < input __key_field_password__ = value_field_password / > | `"name"` |
-| zapcli.fields.key_field_username | string | key_field_username : < input key_field_username = value_field_username / >  | `"name"` | 
-| zapcli.fields.value_field_password | string | value_field_password : < input key_field_password = value_field_password / > | `"password"` |
-| zapcli.fields.value_field_username | string | value_field_username : < input key_field_username = value_field_username / > | `"email"` |
+| zapcli.fields.key_field_password | string | __key_field_password__ : < input __key_field_password__ = value_field_password / > | `"name"` |
+| zapcli.fields.key_field_username | string | __key_field_username__ : < input __key_field_username__ = value_field_username / >  | `"name"` | 
+| zapcli.fields.value_field_password | string | __value_field_password__ : < input key_field_password = __value_field_password__ / > | `"password"` |
+| zapcli.fields.value_field_username | string | __value_field_username__ : < input key_field_username = __value_field_username__ / > | `"email"` |
 | zapcli.submit | object | Get the Button to submit the form and log in | `{"key_field_submit":?,"submit_button_input":?,"value_field_submit":?}` | 
 | zapcli.submit.key_field_submit | string | key_field_submit : < button,input  key_field_submit = value_field_submit / > | `"class"` | 
 | zapcli.submit.submit_button_input | string | submit_button_input : < button,input key_field_submit = value_field_submit / > | `"input"` |
