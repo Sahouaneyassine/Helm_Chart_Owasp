@@ -6,7 +6,7 @@ A Helm chart for Kubernetes
 
 ## Values
 
-| Key | Type | Description | Default |
+| Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | cronjob | object | `{"schedule":"* * * * *"}` | To schedule ou scan to run in a spesific time . |
 | cronjob.schedule | string | `"* * * * *"` | The Cron value . |
