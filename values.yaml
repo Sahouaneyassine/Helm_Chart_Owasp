@@ -77,7 +77,7 @@ zapcli:
   # -- Set A Max time for our scan 
   duree:
     # -- Value of the Max time for our scan
-    value: "5"
+    value:
      
   
   # -- Login Credentials
@@ -85,7 +85,7 @@ zapcli:
     # -- user : Username of the login page
     username: ysahouane
     # -- pass : Password of the login page
-    password: "20112012"
+    password: test
     
   
   # -- Get Fields of the Login page
@@ -122,7 +122,7 @@ zapcli:
     # -- receiver : The mail receiver of the Report
     receiver: sahouaneyassine1999@gmail.com
     # -- password : The password of SMTP server mail
-    password: "20112012Aa"   
+    password:  
     
   
  
