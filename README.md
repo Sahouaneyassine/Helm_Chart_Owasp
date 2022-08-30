@@ -25,12 +25,12 @@ A Helm chart for Kubernetes
 |-----|------|---------|-------------|
 | cronjob | object | To schedule ou scan to run in a spesific time . | `{"schedule":?}` |
 | cronjob.schedule | string | The Cron value . | `"* * * * *"` |
-| zapcli.target | object | information about The Target. | `{"home":?,"loginpage":?}` | 
+| zapcli.target | object | information about The Target site. | `{"home":?,"loginpage":?}` | 
 | zapcli.target.home | string | home : URL of the Home page of website | `"https://authenticationtest.com/"` | 
 | zapcli.target.loginpage | string | loginpage : URL of the Login page | `"https://authenticationtest.com/simpleFormAuth/"` | 
 | zapcli.cred | object | Login Credentials | `{"password":?,"username":?}` |
-| zapcli.cred.password | string | pass : Password of the login page | `"20112012"` |
-| zapcli.cred.username | string | user : Username of the login page | `"ysahouane"` | 
+| zapcli.cred.password | string | password : Password of the login page | `"20112012"` |
+| zapcli.cred.username | string | username : Username of the login page | `"ysahouane"` | 
 | zapcli.duree | object | Set A Max time for our scan  | `{"value":?}` | 
 | zapcli.duree.value | string | Value of the Max time for our scan | `"5"` |
 | zapcli.fields | object | Get Fields of the Login page | `{"key_field_password":?,"key_field_username":?,"value_field_password":?,"value_field_username":?}` | 
@@ -39,18 +39,18 @@ A Helm chart for Kubernetes
 | zapcli.fields.value_field_password | string | __value_field_password__ : < input key_field_password = __value_field_password__ / > | `"password"` |
 | zapcli.fields.value_field_username | string | __value_field_username__ : < input key_field_username = __value_field_username__ / > | `"email"` |
 | zapcli.submit | object | Get the Button to submit the form and log in | `{"key_field_submit":?,"submit_button_input":?,"value_field_submit":?}` | 
-| zapcli.submit.key_field_submit | string | key_field_submit : < button,input  key_field_submit = value_field_submit / > | `"class"` | 
-| zapcli.submit.submit_button_input | string | submit_button_input : < button,input key_field_submit = value_field_submit / > | `"input"` |
-| zapcli.submit.value_field_submit | string | value_field_submit : < button,input  key_field_submit = value_field_submit / > | `"btn btn-lg btn-primary float-right"` |
+| zapcli.submit.key_field_submit | string | __key_field_submit__ : < button,input  __key_field_submit__ = value_field_submit / > | `"class"` | 
+| zapcli.submit.submit_button_input | string | __submit_button_input__ : < __button,input__  key_field_submit = value_field_submit / > | `"input"` |
+| zapcli.submit.value_field_submit | string | __value_field_submit__ : < button,input  key_field_submit = __value_field_submit__ / > | `"btn btn-lg btn-primary float-right"` |
 | zapcli.steps | object | If the login page have 2-step(pages) one for user other for pass | `{"enabled":?,"key":?,"value":?}` |
 | zapcli.steps.enabled | bool | enabled : true/fasle if the login have 2 steps . | `true` |
-| zapcli.steps.key | string | key : get the button/input of the first page by ? < type  value,id,name.. = value / > . | `nil` |
-| zapcli.steps.value | string | value : < type key = value / >. | `"btn slfl"` |
+| zapcli.steps.key | string | __key__ : get the button/input of the first page by ? < type  __value,id,name..__ = value / > . | `nil` |
+| zapcli.steps.value | string | __value__ : < type key = __value__ / >. | `"btn slfl"` |
 | zapcli.cookies | object | To pass the cookies poop up if there is one in our Login Page | `{"enabled":?,"key":?,"type":?,"value":?}` |
 | zapcli.cookies.enabled | bool | enabled : if the login page have a pop up | `true` |
-| zapcli.cookies.key | string | key : get the button/input by ? < type value,id,name.. = value / > | `nil` |
-| zapcli.cookies.type | string | type : to pass the pop up by < button,input key = value / > | `nil` |
-| zapcli.cookies.value | string | value : value of the key ? < type key = value / > | `"btn qkd"` | 
+| zapcli.cookies.key | string | __key__ : get the button/input by ? < type __value,id,name..__ = value / > | `nil` |
+| zapcli.cookies.type | string | __type__ : to pass the pop up by < __button,input__ key = value / > | `nil` |
+| zapcli.cookies.value | string | __value__ : value of the key ? < type key = __value__ / > | `"btn qkd"` | 
 | zapcli.email | object | Send Report as an Email | `{"sender":?,"password":?,"receiver":?}` | 
 | zapcli.email.sender | string | sender : The SMTP server mail | `"sahouane.ensa@uhp.ac.ma"` | 
 | zapcli.email.password | string | password : The password of SMTP server mail | `"20112012Aa"` | 
