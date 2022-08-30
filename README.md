@@ -44,7 +44,6 @@ A Helm chart for Kubernetes
 | zapcli.fields.key_field_username | string | `"name"` | key_field_username : < input key_field_username = value_field_username / >  |
 | zapcli.fields.value_field_password | string | `"password"` | value_field_password : < input key_field_password = value_field_password / > |
 | zapcli.fields.value_field_username | string | `"email"` | value_field_username : < input key_field_username = value_field_username / > |
-| zapcli.image | object | `{"pullPolicy":"IfNotPresent","repository":"yasssahouane/owasp_test","tag":"finalmail0"}` | Image to use for OWASP ZAP Scan container |
 | zapcli.image.pullPolicy | string | `"IfNotPresent"` | pullPolicy |
 | zapcli.image.repository | string | `"yasssahouane/owasp_test"` | Repository  |
 | zapcli.image.tag | string | `"finalmail0"` | Tag |
