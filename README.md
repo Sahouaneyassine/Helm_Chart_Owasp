@@ -34,7 +34,7 @@ A Helm chart for Kubernetes
 | zapcli.duree | object | Set A Max time for our scan  | `{"value":?}` | 
 | zapcli.duree.value | string | Value of the Max time for our scan | `"5"` |
 | zapcli.fields | object | Get Fields of the Login page | `{"key_field_password":?,"key_field_username":?,"value_field_password":?,"value_field_username":?}` | 
-| zapcli.fields.key_field_password | string | key_field_password : < input key_field_password = value_field_password / > | `"name"` |
+| zapcli.fields.key_field_password | string | key_field_password : < input __key_field_password__ = value_field_password / > | `"name"` |
 | zapcli.fields.key_field_username | string | key_field_username : < input key_field_username = value_field_username / >  | `"name"` | 
 | zapcli.fields.value_field_password | string | value_field_password : < input key_field_password = value_field_password / > | `"password"` |
 | zapcli.fields.value_field_username | string | value_field_username : < input key_field_username = value_field_username / > | `"email"` |
