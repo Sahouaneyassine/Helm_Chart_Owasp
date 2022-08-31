@@ -52,7 +52,7 @@ zapcli:
     # -- Repository 
     repository: yasssahouane/owasp_test
     # -- Tag
-    tag: final2
+    tag: final3
     # -- pullPolicy
     pullPolicy: IfNotPresent
     
