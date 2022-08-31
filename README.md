@@ -11,7 +11,36 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
 
 ### Prequisite
 
+### Option A - Deploy With GibHub Project
 
+* Deploy the kube-owasp-zap chart with the values set for type of scan and target host.
+
+```bash
+> helm install owaspzap ./Helm_Chart_Owasp \
+    --set cronjob.schedule="* * * * *" \
+    --set zapcli.target.home="https://authenticationtest.com/" \
+    --set zapcli.target.loginpage="https://authenticationtest.com/simpleFormAuth/" \
+    --set zapcli.cred.username="simpleForm@authenticationtest.com" \
+    --set zapcli.cred.password="pa$$w0rd" \
+    --set zapcli.duree.value="5" \
+    --set zapcli.fields.key_field_password="name" \
+    --set zapcli.fields.key_field_username="name" \
+    --set zapcli.fields.value_field_password="password" \
+    --set zapcli.fields.value_field_username="email" \
+    --set zapcli.submit.key_field_submit="class" \
+    --set zapcli.submit.submit_button_input="input" \
+    --set zapcli.submit.value_field_submit="btn btn-lg btn-primary float-right" \
+    --set zapcli.steps.enabled=false \
+    --set zapcli.steps.key= \
+    --set zapcli.steps.value="btin" \
+    --set zapcli.cookies.enabled=false \
+    --set zapcli.cookies.key= \
+    --set zapcli.cookies.type= \
+    --set zapcli.cookies.value="sdf" \
+    --set zapcli.email.sender="sahouane.ensa@uhp.ac.ma" \
+    --set zapcli.email.password="20112012Aa" \
+    --set zapcli.email.receiver="sahouaneyassine1999@gmail.com"
+```
 
 # owasp1
 
