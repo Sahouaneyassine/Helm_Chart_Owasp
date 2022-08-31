@@ -185,4 +185,4 @@ spec:
             
             
 
-          restartPolicy: OnFailure
+          restartPolicy: Never
