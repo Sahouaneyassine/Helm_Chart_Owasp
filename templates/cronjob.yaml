@@ -144,6 +144,18 @@ spec:
                     name: mysecret
                     key: password_email
                     optional: false
+                - name: port_email
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: port_email
+                    optional: false
+              - name: server_email
+                valueFrom:
+                  secretKeyRef:
+                    name: mysecret
+                    key: server_email
+                    optional: false
               - name: key_field_first_submit
                 valueFrom:
                   secretKeyRef:
