@@ -50,7 +50,7 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
 ```bash
 > helm repo add owaspzap https://sahouaneyassine.github.io/Helm_Chart_Owasp
 
-> helm install owaspzap ./Helm_Chart_Owasp \
+> helm install owaspzap owaspzap/owasp1 \
     --set cronjob.schedule="* * * * *" \
     --set zapcli.target.home="https://authenticationtest.com/" \
     --set zapcli.target.loginpage="https://authenticationtest.com/simpleFormAuth/" \
