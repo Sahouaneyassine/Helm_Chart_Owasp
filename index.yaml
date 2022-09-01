@@ -3,12 +3,12 @@ entries:
   owasp1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-01T13:21:00.756488815+01:00"
+    created: "2022-09-01T13:23:51.100516583+01:00"
     description: A Helm chart for Kubernetes
     digest: 9c8ec9b0d5ca337467e9d86dda48015b74e332fb1238573d07dc174fc95b49d8
     name: owasp1
     type: application
     urls:
-    - https://sahouaneyassine.github.io/owasp1/owasp1-0.1.0.tgz
+    - https://sahouaneyassine.github.io/Helm_Chart_Owasp/owasp1-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-01T13:21:00.754176881+01:00"
+generated: "2022-09-01T13:23:51.098228768+01:00"
