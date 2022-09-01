@@ -123,6 +123,11 @@ zapcli:
     receiver: sahouaneyassine1999@gmail.com
     # -- password : The password of SMTP server mail
     password:  
+    # -- server_email : The SMTP server mail
+    server_email: 
+    # -- port_email : The SMTP server port mail
+    port_email:
+    
     
   
  
