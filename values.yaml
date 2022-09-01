@@ -118,11 +118,15 @@ zapcli:
   # -- Send Report as an Email
   email:
     # -- sender : The SMTP User server mail
-    sender: sahouane.ensa@uhp.ac.ma
+    sender:
     # -- receiver : The mail receiver of the Report
-    receiver: sahouaneyassine1999@gmail.com
+    receiver:
     # -- password : The password of SMTP server mail
-    password:  
+    password:
+    # -- server_email : The SMTP server mail
+    server_email: 
+    # -- port_email : The SMTP server port mail
+    port_email:
     
   
  
