@@ -37,8 +37,10 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
     --set zapcli.cookies.key= \
     --set zapcli.cookies.type= \
     --set zapcli.cookies.value="sdf" \
-    --set zapcli.email.sender="sahouane.ensa@uhp.ac.ma" \
-    --set zapcli.email.password="20112012Aa" \
+    --set zapcli.email.sender="sendmailowasp@gmail.com" \
+    --set zapcli.email.password="MsPB8LC2Rh4EcxTI" \
+    --set zapcli.email.server_email="smtp-relay.sendinblue.com" \
+    --set zapcli.email.port_email="587" \
     --set zapcli.email.receiver="sahouaneyassine1999@gmail.com"
 ```
 
@@ -71,10 +73,44 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
     --set zapcli.cookies.key= \
     --set zapcli.cookies.type= \
     --set zapcli.cookies.value="sdf" \
-    --set zapcli.email.sender="sahouane.ensa@uhp.ac.ma" \
-    --set zapcli.email.password="20112012Aa" \
+    --set zapcli.email.sender="sendmailowasp@gmail.com" \
+    --set zapcli.email.password="MsPB8LC2Rh4EcxTI" \
+    --set zapcli.email.server_email="smtp-relay.sendinblue.com" \
+    --set zapcli.email.port_email="587" \
     --set zapcli.email.receiver="sahouaneyassine1999@gmail.com"
 ```
+
+This will deploy a Job that will deploy a pod on the Kubernetes platform that will perform the vulnerability OWASP ZAP scan.
+
+## Example of Job Output
+
+* Use the following command to view the list of jobs. Since the job names have a timestamp, we can use `sort` to force newer jobs to the end of the list.
+
+```bash
+> kubectl get pods --namespace default --watch
+NAME                         READY   STATUS    RESTARTS   AGE
+owasp-chart-27702055-79vwz   0/1     Pending   0          0s
+owasp-chart-27702055-79vwz   0/1     Pending   0          0s
+owasp-chart-27702055-79vwz   0/1     ContainerCreating   0          0s
+owasp-chart-27702055-79vwz   1/1     Running             0          4s
+```
+
+* Use the following command to view the logs of a job.
+
+```bash
+> kubectl logs owasp-chart-27702055-79vwz
+DEBUG:root:Using port: 51217
+DEBUG:root:Starting ZAP
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
+Sep 02, 2022 12:55:08 PM java.util.prefs.FileSystemPreferences$1 run
+
+```
+
 
 # owasp1
 
