@@ -37,7 +37,7 @@ zapcli:
     # -- Repository 
     repository: yasssahouane/owasp_test
     # -- Tag
-    tag: yassine13
+    tag: v8
     # -- pullPolicy
     pullPolicy: IfNotPresent
     
