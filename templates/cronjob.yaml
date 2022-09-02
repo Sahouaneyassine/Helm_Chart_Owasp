@@ -31,11 +31,6 @@ spec:
             {{- toYaml . | nindent 8 }}
           {{- end }}
 
-          volumes:
-            - name: task-pv-storage3
-              persistentVolumeClaim:
-                claimName: {{ .Values.pvc.name }}
-
 
           containers:
 
@@ -190,9 +185,7 @@ spec:
             imagePullPolicy: {{ .Values.zapcli.image.pullPolicy }}
             command: ["run1.sh"]
 
-            volumeMounts:
-                - mountPath: "/zap/wrk"
-                  name: task-pv-storage3
+
 
             
             
