@@ -139,7 +139,7 @@ spec:
                     name: mysecret
                     key: password_email
                     optional: false
-                - name: port_email
+              - name: port_email
                 valueFrom:
                   secretKeyRef:
                     name: mysecret
