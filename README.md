@@ -108,6 +108,19 @@ DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
 Sep 02, 2022 12:55:08 PM java.util.prefs.FileSystemPreferences$1 run
+.
+.
+.
+.
+.
+.
+WARN: Modern Web Application [10109] x 1 
+        https://code.jquery.com/jquery-3.5.1.min.js
+WARN: Absence of Anti-CSRF Tokens [10202] x 1 
+        https://authenticationtest.com/simpleFormAuth/
+FAIL: 0 WARN: 12        INFO: 0 IGNORE: 0       PASS: 41
+---------------Sending Mail--------------------
+Success Scan
 
 ```
 
