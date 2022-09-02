@@ -28,21 +28,6 @@ serviceAccount:
 cronjob:
   # -- The Cron value .
   schedule: "* * * * *"
-# @ignored
-pv:
-  name: task-pv-volume
-  storageClassName: manual
-  storage: 1Gi
-  accessmode: ReadWriteOnce
-  path: /mnt/data
-
-
-# @ignored
-pvc:
-  name: task-pv-claim
-  storageClassName: manual
-  accessmode: ReadWriteOnce
-  capacity: 1Gi
   
   
   
