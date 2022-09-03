@@ -3,27 +3,6 @@
 # -- Declare variables to be passed into your templates.
 # @ignored
 replicaCount: 1
-# @ignored
-image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  # -- Overrides the image tag whose default is the chart appVersion.
-  tag: ""
-# @ignored
-imagePullSecrets: []
-# @ignored
-nameOverride: "owasp-app"
-# @ignored
-fullnameOverride: "owasp-chart"
-# @ignored
-serviceAccount:
-  # -- Specifies whether a service account should be created
-  create: true
-  # -- Annotations to add to the service account
-  annotations: {}
-  # -- The name of the service account to use.
-  # -- If not set and create is true, a name is generated using the fullname template
-  name: ""
 # -- To schedule ou scan to run in a spesific time .
 cronjob:
   # -- The Cron value .
