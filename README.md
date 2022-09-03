@@ -88,17 +88,13 @@ This will deploy a Job that will deploy a pod on the Kubernetes platform that wi
 
 ```bash
 > kubectl get jobs | grep -v "COMPLETIONS" | sort
-NAME                         READY   STATUS    RESTARTS   AGE
-owasp-chart-27702055-79vwz   0/1     Pending   0          0s
-owasp-chart-27702055-79vwz   0/1     Pending   0          0s
-owasp-chart-27702055-79vwz   0/1     ContainerCreating   0          0s
-owasp-chart-27702055-79vwz   1/1     Running             0          4s
+vuln-scan-2022-09-03-15-58-57-job-owasp1-27703680   0/1           13s        13s
 ```
 
 * Use the following command to view the logs of a job.
 
 ```bash
-> kubectl logs jobs/vuln-scan-2020-03-20-11-10-17-job-kube-owasp-zap
+> kubectl logs jobs/vuln-scan-2022-09-03-15-58-57-job-owasp1-27703680
 DEBUG:root:Using port: 51217
 DEBUG:root:Starting ZAP
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
@@ -127,7 +123,7 @@ Success Scan
 ### Get the Report
 
 * Exemple of the mail we recieve.
-
+![alt text](https://github.com/Sahouaneyassine/Helm_Chart_Owasp/blob/gh-pages/Report.PNG?raw=true)
 
 # owasp1
 
