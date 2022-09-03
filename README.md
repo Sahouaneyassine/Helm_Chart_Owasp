@@ -2,7 +2,7 @@
 
 ## Introduction
 
-zzzOWASP ZAP Helm Chart is an owasp zap scan solution for Kubernetes. It allows you to perform a vulnerability analysis on a host using Kubernetes as the platform. It creates a CronJob who creates jobs on a repeating schedule and each job will deploy a pod that will scan the host for any vulnerabilities.
+OWASP ZAP Helm Chart is an owasp zap scan solution for Kubernetes. It allows you to perform a vulnerability analysis on a host using Kubernetes as the platform. It creates a CronJob who creates jobs on a repeating schedule and each job will deploy a pod that will scan the host for any vulnerabilities.
 
 ## Setup
 
@@ -121,6 +121,7 @@ Success Scan
 ```
 
 ### Get the Report
+After that our job get completed , we will receive an email with an attachment that have the SCAN report as an HTML file .
 
 * Exemple of the mail we recieve.
 ![alt text](https://github.com/Sahouaneyassine/Helm_Chart_Owasp/blob/gh-pages/Report.PNG?raw=true)
