@@ -16,7 +16,7 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
 * Deploy the kube-owasp-zap chart with the values set for type of scan and target host.
 
 ```bash
-> helm install owaspzap ./Helm_Chart_Owasp \
+> helm install "vuln-scan-$(date '+%Y-%m-%d-%H-%M-%S')-job" ./Helm_Chart_Owasp \
     --set cronjob.schedule="* * * * *" \
     --set zapcli.target.home="https://authenticationtest.com/" \
     --set zapcli.target.loginpage="https://authenticationtest.com/simpleFormAuth/" \
@@ -52,7 +52,7 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
 ```bash
 > helm repo add owaspzap https://sahouaneyassine.github.io/Helm_Chart_Owasp
 
-> helm install owaspzap owaspzap/owasp1 \
+> helm install "vuln-scan-$(date '+%Y-%m-%d-%H-%M-%S')-job" owaspzap/owasp1 \
     --set cronjob.schedule="* * * * *" \
     --set zapcli.target.home="https://authenticationtest.com/" \
     --set zapcli.target.loginpage="https://authenticationtest.com/simpleFormAuth/" \
@@ -87,7 +87,7 @@ This will deploy a Job that will deploy a pod on the Kubernetes platform that wi
 * Use the following command to view the list of jobs. Since the job names have a timestamp, we can use `sort` to force newer jobs to the end of the list.
 
 ```bash
-> kubectl get pods --namespace default --watch
+> kubectl get jobs | grep -v "COMPLETIONS" | sort
 NAME                         READY   STATUS    RESTARTS   AGE
 owasp-chart-27702055-79vwz   0/1     Pending   0          0s
 owasp-chart-27702055-79vwz   0/1     Pending   0          0s
@@ -98,7 +98,7 @@ owasp-chart-27702055-79vwz   1/1     Running             0          4s
 * Use the following command to view the logs of a job.
 
 ```bash
-> kubectl logs owasp-chart-27702055-79vwz
+> kubectl logs jobs/vuln-scan-2020-03-20-11-10-17-job-kube-owasp-zap
 DEBUG:root:Using port: 51217
 DEBUG:root:Starting ZAP
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:51217
@@ -123,6 +123,10 @@ FAIL: 0 WARN: 12        INFO: 0 IGNORE: 0       PASS: 41
 Success Scan
 
 ```
+
+### Get the Report
+
+* Exemple of the mail we recieve.
 
 
 # owasp1
