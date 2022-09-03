@@ -37,8 +37,8 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
     --set zapcli.cookies.key= \
     --set zapcli.cookies.type= \
     --set zapcli.cookies.value="sdf" \
-    --set zapcli.email.sender="sendmailowasp@gmail.com" \
-    --set zapcli.email.password="MsPB8LC2Rh4EcxTI" \
+    --set zapcli.email.sender="ysahouane@sqli.com" \
+    --set zapcli.email.password="YxMKv50b2qPpw7rn" \
     --set zapcli.email.server_email="smtp-relay.sendinblue.com" \
     --set zapcli.email.port_email="587" \
     --set zapcli.email.receiver="sahouaneyassine1999@gmail.com"
@@ -73,8 +73,8 @@ The following shows how to perform an owasp zap scan using Kubernetes. There are
     --set zapcli.cookies.key= \
     --set zapcli.cookies.type= \
     --set zapcli.cookies.value="sdf" \
-    --set zapcli.email.sender="sendmailowasp@gmail.com" \
-    --set zapcli.email.password="MsPB8LC2Rh4EcxTI" \
+    --set zapcli.email.sender="ysahouane@sqli.com" \
+    --set zapcli.email.password="YxMKv50b2qPpw7rn" \
     --set zapcli.email.server_email="smtp-relay.sendinblue.com" \
     --set zapcli.email.port_email="587" \
     --set zapcli.email.receiver="sahouaneyassine1999@gmail.com"
