@@ -1,4 +1,4 @@
-# zzzxOWASP ZAP Helm Chart
+# OWASP ZAP Helm Chart
 
 ## Introduction
 
