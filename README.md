@@ -87,7 +87,7 @@ This will deploy a Job that will deploy a pod on the Kubernetes platform that wi
 * Use the following command to view the list of jobs. Since the job names have a timestamp, we can use `sort` to force newer jobs to the end of the list.
 
 ```bash
-> kubectl get jobs | grep -v "COMPLETIONS" | sort
+> kubectl get pods | grep -v "COMPLETIONS" | sort
 vuln-scan-2022-09-03-15-58-57-job-owasp1-27703680   0/1           13s        13s
 ```
 
