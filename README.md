@@ -124,7 +124,7 @@ Success Scan
 After that our job get completed , we will receive an email with an attachment that have the SCAN report as an HTML file .
 
 * Exemple of the mail we recieve.
-![alt text](https://github.com/Sahouaneyassine/Helm_Chart_Owasp/blob/gh-pages/Report.PNG?raw=true)
+![alt text](https://github.com/Sahouaneyassine/Helm_Chart_Owasp/blob/main/Report.PNG?raw=true)
 
 # owasp1
 
