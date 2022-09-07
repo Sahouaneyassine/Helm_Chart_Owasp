@@ -32,7 +32,7 @@ zapcli:
     # -- Repository 
     repository: yasssahouane/owasp_test
     # -- Tag
-    tag: v9
+    tag: helm_final
     # -- pullPolicy
     pullPolicy: IfNotPresent
     
