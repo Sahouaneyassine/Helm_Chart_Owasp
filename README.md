@@ -167,8 +167,8 @@ A Helm chart for Kubernetes
 | zapcli.email | object | Send Report as an Email | `{"sender":?,"password":?,"receiver":?}` | 
 | zapcli.email.sender | string | sender : The SMTP server mail | `"ysahouane@sqli.com"` | 
 | zapcli.email.password | string | password : The password of SMTP server mail | `"YxMKv50b2qPpw7rn"` | 
-| zapcli.email.server_email | string | sender : The SMTP server  | `"smtp-relay.sendinblue.com"` | 
-| zapcli.email.port_email | string | password : The PORT of the SMTP server | `"587"` | 
+| zapcli.email.server_email | string | server_email : The SMTP server  | `"smtp-relay.sendinblue.com"` | 
+| zapcli.email.port_email | string | port_email : The PORT of the SMTP server | `"587"` | 
 | zapcli.email.receiver | string | receiver : The mail of who will receive the report | `"sahouaneyassine1999@gmail.com"` |
 
 ----------------------------------------------
