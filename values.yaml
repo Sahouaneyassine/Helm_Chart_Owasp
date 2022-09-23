@@ -14,7 +14,7 @@ pv:
   storageClassName: manual
   storage: 1Gi
   accessmode: ReadWriteOnce
-  path: /test1/data
+  path: /tmp/data
 
 
 # @ignored
